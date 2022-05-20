@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "Registrarse";
+}
+
+<div class="container">
+    <div class="row no-gutters">
+        <div class="col-md-12 ">
+            <div class="col-md-12">
+                <div class="contact-wrap w-100 p-md-5 p-4">
+                    <h3 class="mb-4">Registrarse</h3>
+                    <form method="post" action="/Registrar/Registro" class="contactForm" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="Nombre">Nombres</label>
+                                    <input type="text" class="form-control" name="Nombre" id="Nombre" placeholder="Nombres*">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="Apellidos">Apellidos</label>
+                                    <input type="text" class="form-control" name="Apellidos" id="Apellidos" placeholder="Apellidos">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="Correo">Correo</label>
+                                    <input type="email" class="form-control" name="Correo" id="Correo" placeholder="Correo*">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="Contrasenia">Contraseña</label>
+                                    <input type="password" class="form-control" name="Contrasenia" id="Contrasenia" placeholder="Contraseña*">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="Contrasenia">Usuario/Veterinario</label>
+                                    <select class="form-control" name="Tipo">
+                                        <option value="Usuario">Usuario</option>
+                                        <option value="Veterinario">Veterinario</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="photos">Foto de Perfil</label>
+                                    <input type="file" class="form-control" name="photos" id="photos" placeholder="Imagen*">
+                                </div>
+                            </div>
+                            @*<div class="col-md-12">
+            <div class="form-group">
+                <label class="label" for="subject">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="label" for="#">Message</label>
+                <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+            </div>
+        </div>*@
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="submit" value="Registrarse" class="btn btn-primary">
+                                    <div class="submitting"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            @*<div class="col-md-5 d-flex align-items-stretch">
+                    <div class="info-wrap w-100 p-5 img" style="background-image: url(images/img.jpg);">
+                    </div>
+                </div>*@
+        </div>
+    </div>
+</div>

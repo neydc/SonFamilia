@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Publicación";
+}
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 ftco-animate">
+                    <div class="block-7">
+                        <div class="img" style="background-image: url(images/@item.Imagen);"></div>
+                        <div class="text-center p-4">
+                            <span class="excerpt d-block">@item.Titulo</span>
+                           
+                            <span class=" d-block">@item.Descripcion</span>
+
+                            <a href="#" class="btn btn-primary d-block px-2 py-3">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+

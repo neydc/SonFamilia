@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="container">
+    <div class="row no-gutters">
+        <div class="col-md-12 ">
+            <div class="col-md-12">
+                <div class="contact-wrap w-100 p-md-5 p-4">
+                    <h3 class="mb-4">Iniciar Sesión</h3>
+                    <form method="POST" action="/Login/SignIn" class="contactForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="Correo">Correo</label>
+                                    <input type="email" class="form-control" value="@ViewBag.Correo" name="Correo" id="Correo" placeholder="Correo*">
+                                    <div>@Html.ValidationMessage("Correo")</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="Apellidos">Contraseña</label>
+                                    <input type="password" class="form-control" value="@ViewBag.Contrasenia" name="Contrasenia" id="Contrasenia" placeholder="Contraseña">
+                                    <div>@Html.ValidationMessage("Contrasenia")</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div>@Html.ValidationMessage("Incorrecto")</div>
+                                    <div>@Html.ValidationMessage("Llenar")</div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="submit" value="Login" class="btn btn-primary">
+                                    <div class="submitting"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
