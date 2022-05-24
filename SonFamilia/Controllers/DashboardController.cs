@@ -25,8 +25,14 @@ namespace SonFamilia.Controllers
             Usuario user = LoggedUser();
             if (user != null)
             {
-                ViewBag.Usuario = user.Nombre;
-               
+                ViewBag.Usuario = user;
+                var obtenerPost = con.Posts.Where(a => a.IdUsuario == user.Id).ToList();
+                if (obtenerPost != null)
+                {
+                 
+                    return View(obtenerPost);
+                }
+                
             }
             if (user==null)
             {

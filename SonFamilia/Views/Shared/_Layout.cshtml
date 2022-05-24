@@ -20,7 +20,8 @@
     <link href="~/lib/bootstrap/dist/css/jquery.timepicker.css" rel="stylesheet" />
 
     <link href="~/lib/bootstrap/dist/css/flaticon.css" rel="stylesheet" />
-    @*<script src="https://kit.fontawesome.com/2a45e42af9.js" crossorigin="anonymous"></script>*@
+
+    <script src="https://kit.fontawesome.com/2a45e42af9.js" crossorigin="anonymous"></script>
     <link href="~/lib/bootstrap/dist/css/style.css" rel="stylesheet" />
 </head>
 <body>
@@ -62,16 +63,21 @@
                     <li class="nav-item"><a href="/veterinario" class="nav-link">Usuarios</a></li>
                     <li class="nav-item"><a href="/public" class="nav-link">Post</a></li>
                     <li class="nav-item"><a href="/contacto" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"></li>
                     @if (ViewBag.Usuario != null)
                     {
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@ViewBag.Usuario</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <img style="width:25px;border-radius:15px" src="/images/@ViewBag.Usuario.Imagen" alt="Alternate Text" />
+                            @ViewBag.Usuario.Nombre</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Editar Perfil</a>
+                                <a class="dropdown-item" href="/dashboard">Mis Publicaciones</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/Login/Logout">Cerrar Sesión</a>
                             </div>
                         </li>
+
                     }
                 </ul>
             </div>
@@ -86,16 +92,16 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-                    <h2 class="footer-heading">Petsitting</h2>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <div class="col-md-6 col-lg-4 mb-4 mb-md-0">
+                    <h2 class="footer-heading">Son Familia</h2>
+                    <p>Amor por nuestras mascotas, con cariño ayudando a quines más lo necesitan y no se pueden expresar.</p>
                     <ul class="ftco-footer-social p-0">
                         <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
                         <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
                         <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fa fa-instagram"></span></a></li>
                     </ul>
                 </div>
-                <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                @*<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
                     <h2 class="footer-heading">Latest News</h2>
                     <div class="block-21 mb-4 d-flex">
                         <a class="img mr-4 rounded" style="background-image: url(images/image_1.jpg);"></a>
@@ -119,25 +125,24 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 pl-lg-5 mb-4 mb-md-0">
-                    <h2 class="footer-heading">Quick Links</h2>
+                </div>*@
+                <div class="col-md-6 col-lg-4 pl-lg-5 mb-4 mb-md-0">
+                    <h2 class="footer-heading">Links</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="py-2 d-block">Home</a></li>
-                        <li><a href="#" class="py-2 d-block">About</a></li>
-                        <li><a href="#" class="py-2 d-block">Services</a></li>
-                        <li><a href="#" class="py-2 d-block">Works</a></li>
-                        <li><a href="#" class="py-2 d-block">Blog</a></li>
-                        <li><a href="#" class="py-2 d-block">Contact</a></li>
+                        <li><a href="/" class="py-2 d-block">Inicio</a></li>
+                        <li><a href="/nosotros" class="py-2 d-block">Nosotros</a></li>
+                        <li><a href="/veterinario" class="py-2 d-block">Usuarios</a></li>
+                        <li><a href="/public" class="py-2 d-block">Post</a></li>
+                        <li><a href="/contacto" class="py-2 d-block">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-                    <h2 class="footer-heading">Have a Questions?</h2>
+                    <h2 class="footer-heading">Información</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="icon fa fa-map"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                            <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                            <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">info@yourdomain.com</span></a></li>
+                            <li><span class="icon fa fa-map"></span><span class="text">Jr. Revilla Perez 301, Cajamarca</span></li>
+                            <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+51 952 360 387</span></a></li>
+                            <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">info@sonfamilia.com</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -148,8 +153,7 @@
                     <p class="copyright">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> Todos los derechos reservados| Desarrollado por el Faraón Love Sheidee XD <i class="fa fa-heart" aria-hidden="true"></i> Raa <a href="https://colorlib.com" target="_blank">ingiñerus.cum</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <script>document.write(new Date().getFullYear());</script> Todos los derechos reservados<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>
             </div>

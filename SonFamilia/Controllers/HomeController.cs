@@ -22,7 +22,7 @@ namespace SonFamilia.Controllers
             Usuario user = LoggedUser();
             if (user != null)
             {
-                ViewBag.Usuario = user.Nombre;
+                ViewBag.Usuario = user;
             }
            
             return View();

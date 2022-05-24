@@ -14,5 +14,7 @@ namespace SonFamilia.Models
         public string Contrasenia{ get; set; }
         public string Tipo{ get; set; }
         public string Imagen{ get; set; }
+
+        public List<Post> Posts{ get; set; }
     }
 }

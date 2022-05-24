@@ -20,7 +20,7 @@ namespace SonFamilia.Controllers
             Usuario user = LoggedUser();
             if (user != null)
             {
-                ViewBag.Usuario = user.Nombre;
+                ViewBag.Usuario = user;
             }
             var conexion = db.Usuarios.ToList();
             return View(conexion);

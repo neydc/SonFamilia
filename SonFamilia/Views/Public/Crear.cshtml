@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<div class="container">
+    <div class="row no-gutters">
+        <div class="col-md-12 ">
+            <div class="col-md-12">
+                <div class="contact-wrap w-100 p-md-5 p-4">
+                    <h3 class="mb-4 ">Crear Publicación</h3>
+                    <form method="post" action="/public/crear" class="contactForm" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="Titulo">Titulo</label>
+                                    <textarea name="Titulo" class="form-control" id="Titulo" cols="30" rows="4" placeholder="Titulo"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="#">Descripción</label>
+                                    <textarea name="Descripcion" class="form-control" id="Descripcion" cols="30" rows="4" placeholder="Descripción"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="photos">Foto </label>
+                                    <input type="file" class="form-control" name="photos" id="photos" placeholder="Imagen*">
+                                </div>
+                            </div>
+                            @*<div class="col-md-12">
+            <div class="form-group">
+                <label class="label" for="subject">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+            </div>
+        </div>
+                            *@
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="submit" value="Guardar" class="btn btn-primary">
+                                    <div class="submitting"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            @*<div class="col-md-5 d-flex align-items-stretch">
+                    <div class="info-wrap w-100 p-5 img" style="background-image: url(images/img.jpg);">
+                    </div>
+                </div>*@
+        </div>
+    </div>
+</div>

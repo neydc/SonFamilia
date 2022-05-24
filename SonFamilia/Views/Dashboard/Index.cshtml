@@ -3,5 +3,49 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>@ViewBag.Usuario</h1>
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-lg-12 text-right">
+                <a class="btn btn-primary" href="/public/crear">Crear Post</a>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 d-flex ftco-animate">
+                    <div class="blog-entry align-self-stretch">
+                        <a href="/public/detalle?id=@item.Id" class="block-20 rounded" style="background-image: url('images/@item.Imagen');">
+                        </a>
+                        <div class="text p-4">
+                            <div class="meta mb-2">
+                                <span class="excerpt d-block">@item.Titulo</span>
+                                <div><a href="#">@item.FechaRegistro.ToString("d,M,yyyy")</a></div>
+                                @*<div><a href="#">April 07, 2020</a></div>*@
+                                <div><a href="#">@item.Usuario.Nombre</a></div>
+                            </div>
+                            <span class=" d-block">@item.Descripcion.Substring(0, 30)...</span>
+                            <a href="/public/detalle?id=@item.Id" class="btn btn-primary d-block px-2 py-3">Ver más</a>
+                            <a href="/public/eliminar?id=@item.Id" class="btn btn-primary d-block px-2 py-3">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="row mt-5">
+            <div class="col text-center">
+                <div class="block-27">
+                    <ul>
+                        <li><a href="#">&lt;</a></li>
+                        <li class="active"><span>1</span></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
