@@ -431,3 +431,4 @@ C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\obj\Debug\netcoreapp3.1\Razor\
 C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\obj\Debug\netcoreapp3.1\Razor\Views\Public\Crear.cshtml.g.cs
 C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\obj\Debug\netcoreapp3.1\Razor\Views\Public\Detalle.cshtml.g.cs
 C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\obj\Debug\netcoreapp3.1\SonFamilia.csproj.AssemblyReference.cache
+C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\obj\Debug\netcoreapp3.1\Razor\Views\Dashboard\Editar.cshtml.g.cs

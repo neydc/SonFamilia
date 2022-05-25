@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Editar";
+}
+<form action="/Dashboard/Editar?id=@Model.Id" method="post" enctype="multipart/form-data">
+    <section class="ftco-section bg-light">
+        <div class="container">
+            <div class="row">
+
+                <div style="box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2); " class="ftco-animate col-lg-12">
+
+                    <div class="row  align-items-center justify-content-center">
+
+                        <div class="col-lg-6 text-center ">
+                            <img width="500px" src="~/images/@Model.Imagen" alt="@Model.Imagen" />
+                            <input type="file" name="photos" value="@Model.Imagen" />
+                        </div>
+                        <div class="col-lg-6 ">
+                            <h6>Editar Titulo</h6>
+                            <input class="form-control" type="text" name="Titulo" value="@Model.Titulo" />
+                            <h6>Editar Descripción</h6>
+                            <span class="d-block"></span>
+                            <textarea name="Descripcion" class="form-control" id="message" cols="30" rows="4" placeholder="Message">@Model.Descripcion</textarea>
+
+                            <a>Publicado el @Model.FechaRegistro.ToString("dd")</a>
+                            <a> de @Model.FechaRegistro.ToString("MM") </a>
+                            <a> del año @Model.FechaRegistro.ToString("yyyy") </a>
+                            <br />
+                            <input class="btn btn-success" type="submit" name="Guardar" value="Guardar" />
+                        </div>
+                       
+                    </div>
+                </div> <a href="/dashboard" class="btn  text-right">Volver</a>
+
+            </div>
+        </div>
+    </section>
+</form>

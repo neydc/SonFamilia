@@ -73,16 +73,5 @@ namespace SonFamilia.Controllers
             var post = con.Posts.Include(a => a.Usuario).Where(a => a.Id == id).FirstOrDefault();
             return View(post);
         } 
-        [HttpGet]
-        public IActionResult Eliminar(int id)
-        {
-            var posteliminar = con.Posts.Where(a=>a.Id==id).FirstOrDefault();
-            if (posteliminar!=null)
-            {
-                posteliminar.Estado = 0;
-            }
-            con.SaveChanges();
-            return RedirectToAction("","public");
-        }
     }
 }
