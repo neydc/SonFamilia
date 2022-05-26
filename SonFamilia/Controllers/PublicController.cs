@@ -52,6 +52,7 @@ namespace SonFamilia.Controllers
                 post.Imagen = photos.FileName;
                 post.FechaRegistro = DateTime.Now;
                 post.IdUsuario = user.Id;
+                post.Estado = 1;
                 con.SaveChanges();
                 return RedirectToAction("", "public");
             }
