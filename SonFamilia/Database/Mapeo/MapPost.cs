@@ -14,6 +14,9 @@ namespace SonFamilia.Database.Mapeo
         {
             builder.ToTable("Post");
             builder.HasKey(a=>a.Id);
+
+            builder.HasMany(a => a.ListImagenes).WithOne(a => a.Post).HasForeignKey(a => a.PostId);
+
         }
     }
 }

@@ -14,7 +14,10 @@
 
                 <div class="row  align-items-center justify-content-center">
                     <div class="col-lg-6 text-center ">
-                        <img width="500px" src="~/images/@Model.Imagen" alt="@Model.Imagen" />
+                        @foreach (var imagencita in ViewBag.listimagenes)
+                        {
+                            <img width="160px" src="~/images/@imagencita.ImagenUrl" alt="@imagencita.ImagenUrl" />
+                        }
                     </div>
                     <div class="col-lg-6 ">
                         <a>Publicado el @Model.FechaRegistro.ToString("dd")</a>

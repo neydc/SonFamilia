@@ -18,6 +18,7 @@ namespace SonFamilia.Database
         public DbSet<Veterinario> Veterinarios{ get; set; }
         public DbSet<Mascota> Mascotas{ get; set; }
         public DbSet<Post> Posts{ get; set; }
+        public DbSet<Imagen> Imagenes{ get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) 
         {
@@ -26,6 +27,7 @@ namespace SonFamilia.Database
             modelBuilder.ApplyConfiguration(new MapMascota());
             modelBuilder.ApplyConfiguration(new VeterinarioMap());
             modelBuilder.ApplyConfiguration(new MapPost());
+            modelBuilder.ApplyConfiguration(new MapImagen());
         }
     }
 }

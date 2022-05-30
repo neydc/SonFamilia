@@ -60,30 +60,30 @@ namespace SonFamilia.Controllers
             var post = con.Posts.Where(a => a.Id == id).FirstOrDefault();
             return View(post);
         }
-        [HttpPost]
-        public IActionResult Editar(Post post, IFormFile photos,int id)
-        {
-            var obtnerPost = con.Posts.Where(a=>a.Id==id).FirstOrDefault();
-            if (obtnerPost!=null)
-            {
-                obtnerPost.Titulo =post.Titulo;
-                obtnerPost.Descripcion =post.Descripcion;
-                obtnerPost.Estado =1;
-                if (photos!=null)
-                {
-                    if (obtnerPost.Imagen != photos.FileName)
-                    {
-                        var path = Path.Combine(this.ihostingEnvironment.WebRootPath, "images", photos.FileName);
-                        var stream = new FileStream(path, FileMode.Create);
-                        photos.CopyToAsync(stream);
-                        obtnerPost.Imagen = photos.FileName;
-                    }
-                }
-                con.SaveChanges();
-                return RedirectToAction("", "dashboard");
-            }
-            return View();
-        }
+        //[HttpPost]
+        //public IActionResult Editar(Post post, IFormFile photos,int id)
+        //{
+        //    var obtnerPost = con.Posts.Where(a=>a.Id==id).FirstOrDefault();
+        //    if (obtnerPost!=null)
+        //    {
+        //        obtnerPost.Titulo =post.Titulo;
+        //        obtnerPost.Descripcion =post.Descripcion;
+        //        obtnerPost.Estado =1;
+        //        if (photos!=null)
+        //        {
+        //            if (obtnerPost.Imagen != photos.FileName)
+        //            {
+        //                var path = Path.Combine(this.ihostingEnvironment.WebRootPath, "images", photos.FileName);
+        //                var stream = new FileStream(path, FileMode.Create);
+        //                photos.CopyToAsync(stream);
+        //                obtnerPost.Imagen = photos.FileName;
+        //            }
+        //        }
+        //        con.SaveChanges();
+        //        return RedirectToAction("", "dashboard");
+        //    }
+        //    return View();
+        //}
 
             [HttpGet]
         public IActionResult Eliminar(int id)

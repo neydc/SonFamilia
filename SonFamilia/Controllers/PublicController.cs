@@ -29,7 +29,7 @@ namespace SonFamilia.Controllers
                 ViewBag.Usuario = user;
             }
 
-            var publicaciones = con.Posts.Include(a => a.Usuario).Where(a=>a.Estado==1).ToList();
+            var publicaciones = con.Posts.Include(a => a.Usuario).Where(a => a.Estado == 1).ToList();
             return View(publicaciones);
         }
 
@@ -37,26 +37,93 @@ namespace SonFamilia.Controllers
         {
             return View();
         }
-       
+
 
         [HttpPost]
-        public IActionResult Crear(Post post, IFormFile photos)
+        public IActionResult Crear(Post post, List<IFormFile> photos)
         {
-            if (ModelState.IsValid)
+            Usuario user = LoggedUser();
+            if (photos!=null)
             {
-                Usuario user = LoggedUser();
-                con.Posts.Add(post);
-                var path = Path.Combine(this.ihostingEnvironment.WebRootPath, "images", photos.FileName);
-                var stream = new FileStream(path, FileMode.Create);
-                photos.CopyToAsync(stream);
-                post.Imagen = photos.FileName;
+                var obtenerUltimoId = con.Posts.OrderByDescending(a => a.Id).FirstOrDefault();
+                int idIncrementado = obtenerUltimoId.Id;
+                post.Id = idIncrementado + 1;
                 post.FechaRegistro = DateTime.Now;
                 post.IdUsuario = user.Id;
                 post.Estado = 1;
+                post.Imagen = photos.FirstOrDefault().FileName;
+                con.Posts.Add(post);
                 con.SaveChanges();
-                return RedirectToAction("", "public");
+                foreach (var image in photos)
+                {
+                    var path = Path.Combine(this.ihostingEnvironment.WebRootPath, "images", image.FileName);
+                    var stream = new FileStream(path, FileMode.Create);
+                    image.CopyToAsync(stream);
+                    var agregarImagen = new Imagen
+                    {
+                        ImagenUrl = image.FileName,
+                        PostId = post.Id
+                    };
+                    con.Imagenes.Add(agregarImagen);
+                }
+             
+                con.SaveChanges();
             }
-            return View();
+            //if (ModelState.IsValid)
+            //{
+            //    Usuario user = LoggedUser();
+
+            //    if (photos != null)
+            //    {
+            //        foreach (var item in photos.Images)
+            //        {
+            //            var _productImage = new ProductImage
+            //            {
+            //                ImageUrl = item.FileName,
+            //            };
+            //            con.ProductImage.Add(_productImage);
+            //        }
+
+            //        //var path = Path.Combine(ihostingEnvironment.WebRootPath, "images", photo.FileName);
+            //        //using (var stream = System.IO.File.Create(path))
+            //        //{
+            //        //    await photo.CopyToAsync(stream);
+            //        //}
+            //        //var path = Path.Combine(this.ihostingEnvironment.WebRootPath, "images", photos.FileName);
+            //        //        var stream = new FileStream(path, FileMode.Create);
+            //        //        photos.CopyToAsync(stream);
+
+            //        //var filePath = Path.GetTempFileName();
+            //        //using (var stream = System.IO.File.Create(filePath))
+            //        //{
+            //        //    await photo.CopyToAsync(stream);
+            //        //}
+            //        post.FechaRegistro = DateTime.Now;
+            //        post.IdUsuario = user.Id;
+            //        post.Estado = 1;
+            //        con.SaveChanges();
+            //    }
+            //    return RedirectToAction("", "public");
+            //}
+            //public IActionResult Crear(Post post, IFormFile photos)
+            //{
+            //    if (ModelState.IsValid)
+            //    {
+            //        Usuario user = LoggedUser();
+            //        con.Posts.Add(post);
+            //        var path = Path.Combine(this.ihostingEnvironment.WebRootPath, "images", photos.FileName);
+            //        var stream = new FileStream(path, FileMode.Create);
+            //        photos.CopyToAsync(stream);
+            //        post.Imagen = photos.FileName;
+            //        post.FechaRegistro = DateTime.Now;
+            //        post.IdUsuario = user.Id;
+            //        post.Estado = 1;
+            //        con.SaveChanges();
+            //        return RedirectToAction("", "public");
+            //    }
+            //    return View();
+            //}
+            return RedirectToAction("", "public");
         }
         private Usuario LoggedUser()
         {
@@ -68,10 +135,11 @@ namespace SonFamilia.Controllers
             }
             return null;
         }
-
         public IActionResult Detalle(int id)
         {
             var post = con.Posts.Include(a => a.Usuario).Where(a => a.Id == id).FirstOrDefault();
+            var imagenes = con.Imagenes.Where(e=>e.PostId==post.Id).ToList();
+            ViewBag.listimagenes = imagenes;
             return View(post);
         } 
     }

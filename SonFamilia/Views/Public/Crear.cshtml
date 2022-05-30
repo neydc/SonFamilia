@@ -12,6 +12,7 @@
                     <form method="post" action="/public/crear" class="contactForm" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-6">
+                                <input type="hidden" name="Id"  />
                                 <div class="form-group">
                                     <label class="label" for="Titulo">Titulo</label>
                                     <textarea name="Titulo" class="form-control" id="Titulo" cols="30" rows="4" placeholder="Titulo"></textarea>
@@ -26,16 +27,9 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label" for="photos">Foto </label>
-                                    <input type="file" class="form-control" name="photos" id="photos" placeholder="Imagen*">
+                                    <input type="file" class="form-control" multiple="multiple" name="photos" id="photos" placeholder="Imagen*">
                                 </div>
                             </div>
-                            @*<div class="col-md-12">
-            <div class="form-group">
-                <label class="label" for="subject">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-            </div>
-        </div>
-                            *@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <input type="submit" value="Guardar" class="btn btn-primary">

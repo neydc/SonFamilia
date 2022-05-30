@@ -430,5 +430,14 @@ C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\obj\Debug\netcoreapp3.1\Razor\
 C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\obj\Debug\netcoreapp3.1\Razor\Views\Public\Index.cshtml.g.cs
 C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\obj\Debug\netcoreapp3.1\Razor\Views\Public\Crear.cshtml.g.cs
 C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\obj\Debug\netcoreapp3.1\Razor\Views\Public\Detalle.cshtml.g.cs
-C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\obj\Debug\netcoreapp3.1\SonFamilia.csproj.AssemblyReference.cache
 C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\obj\Debug\netcoreapp3.1\Razor\Views\Dashboard\Editar.cshtml.g.cs
+C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\bin\Debug\netcoreapp3.1\Grpc.Core.dll
+C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\bin\Debug\netcoreapp3.1\Grpc.Core.Api.dll
+C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libgrpc_csharp_ext.arm64.so
+C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libgrpc_csharp_ext.x64.so
+C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libgrpc_csharp_ext.x64.dylib
+C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
+C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\grpc_csharp_ext.x86.dll
+C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\bin\Debug\netcoreapp3.1\ServiceStack.Interfaces.dll
+C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\obj\Debug\netcoreapp3.1\SonFamilia.csproj.AssemblyReference.cache
