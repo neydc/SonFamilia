@@ -441,3 +441,4 @@ C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\bin\Debug\netcoreapp3.1\runtim
 C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\bin\Debug\netcoreapp3.1\ServiceStack.Interfaces.dll
 C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\obj\Debug\netcoreapp3.1\SonFamilia.csproj.AssemblyReference.cache
+C:\Users\ndiaz\source\repos\SonFamilia\SonFamilia\obj\Debug\netcoreapp3.1\Razor\Views\Recomendacion\Index.cshtml.g.cs

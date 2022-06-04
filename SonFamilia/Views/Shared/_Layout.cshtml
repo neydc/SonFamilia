@@ -62,6 +62,7 @@
                     <li class="nav-item"><a href="/nosotros" class="nav-link">Nosotros</a></li>
                     <li class="nav-item"><a href="/veterinario" class="nav-link">Usuarios</a></li>
                     <li class="nav-item"><a href="/public" class="nav-link">Post</a></li>
+                    <li class="nav-item"><a href="/recomendacion" class="nav-link">Recomendaciones</a></li>
                     <li class="nav-item"><a href="/contacto" class="nav-link">Contacto</a></li>
                     <li class="nav-item"></li>
                     @if (ViewBag.Usuario != null)
@@ -69,7 +70,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                 <img style="width:25px;border-radius:15px" src="/images/@ViewBag.Usuario.Imagen" alt="Alternate Text" />
-                            @ViewBag.Usuario.Nombre</a>
+                                @ViewBag.Usuario.Nombre
+                            </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Editar Perfil</a>
                                 <a class="dropdown-item" href="/dashboard">Mis Publicaciones</a>
@@ -97,7 +99,7 @@
                     <p>Amor por nuestras mascotas, con cariño ayudando a quines más lo necesitan y no se pueden expresar.</p>
                     <ul class="ftco-footer-social p-0">
                         <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
-                        <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
+                        <li class="ftco-animate"><a target="_blank"  href="https://web.facebook.com/Son-Familia-No-los-abandones-104868852146775" target="_blank" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
                         <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fa fa-instagram"></span></a></li>
                     </ul>
                 </div>
@@ -133,6 +135,7 @@
                         <li><a href="/nosotros" class="py-2 d-block">Nosotros</a></li>
                         <li><a href="/veterinario" class="py-2 d-block">Usuarios</a></li>
                         <li><a href="/public" class="py-2 d-block">Post</a></li>
+                        <li><a href="/recomendacion" class="py-2 d-block">Recomendaciones</a></li>
                         <li><a href="/contacto" class="py-2 d-block">Contacto</a></li>
                     </ul>
                 </div>
